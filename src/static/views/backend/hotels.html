@@ -1,0 +1,16 @@
+﻿<div class="apps" ng-controller="AppsController">
+	<h1>
+        <span class="uppercase">{{strings['hotels']}}</span>
+        <button class="btn btn-success" ng-click="openForm()">
+            <i class="fa fa-plus"></i>{{strings['add_hotel']}}
+        </button>
+    </h1>
+	<div>
+        <p class="no-data" ng-if="!model.length">{{strings['no_data']}}</p>
+	    <ul>
+            <li ng-repeat="item in model">{{item.name}}</li>
+        </ul>
+	</div>
+    <div ng-include="'/backend/apps-add.html'"></div>
+</div>
+
