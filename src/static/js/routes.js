@@ -12,9 +12,9 @@ module.config(function ($stateProvider, $urlRouterProvider) {
           url: "/hotels",
           templateUrl: "backend/hotels.html"
       })
-      .state('users', {
-          url: "/users",
-          templateUrl: "backend/users.html"
+      .state('languages', {
+          url: "/languages",
+          templateUrl: "backend/languages.html"
       })
       .state('models', {
           url: "/models",

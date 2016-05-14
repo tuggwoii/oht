@@ -17,6 +17,11 @@ module.factory('NotificationService', ['$rootScope', '$timeout', function ($root
             $timeout(function () {
                 $rootScope.$broadcast('OpenNotify', model);
             }, 500);
-        }
+        },
+        confirm: function (callback) {
+            $timeout(function () {
+                $rootScope.$broadcast('OpenConfirm', callback);
+            }, 100);
+        },
     };
 }]);

@@ -1,7 +1,7 @@
 ﻿'use strict';
 module.factory('URLS', function () {
     var base = '/api/v1/';
-    var models = ['classes', 'apps'];
+    var models = ['classes', 'apps', 'languages'];
     var endpoints = {
         ui: {
             nav: base + 'backend/navigations'
