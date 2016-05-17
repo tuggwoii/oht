@@ -1,4 +1,4 @@
-﻿<div class="apps" ng-controller="AppsController">
+﻿<div class="apps" ng-controller="HotelsController">
 	<h1>
         <span class="uppercase">{{strings['hotels']}}</span>
         <button class="btn btn-success" ng-click="openForm()">
@@ -8,9 +8,9 @@
 	<div>
         <p class="no-data" ng-if="!model.length">{{strings['no_data']}}</p>
 	    <ul>
-            <li ng-repeat="item in model">{{item.name}}</li>
+            <li ng-repeat="item in model" ng-click="edit(item.id)">{{item.name}}</li>
         </ul>
 	</div>
-    <div ng-include="'/backend/apps-add.html'"></div>
+    <div ng-include="'/backend/add-hotel.html'"></div>
 </div>
 

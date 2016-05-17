@@ -27,13 +27,22 @@ module.controller('NavController', ['$scope', '$cookies', 'AccountService', 'Not
 
     $scope.setMenuActive = function () {
         angular.forEach($scope.navs, function (item) {
-            if (item.url.replace('dashboard', '') === '/' + window.location.hash) {
+            var url = item.url.replace('dashboard#/','').slice(0, -1);
+            if (window.location.hash.indexOf(url) > -1 && (window.location.hash != '' && window.location.hash != '#/')) {
                 item.active = true;
             }
             else {
                 item.active = false;
             }
         });
+        if ($scope.navs) {
+            if (window.location.hash == '' || window.location.hash == '#/') {
+                $scope.navs[0].active = true;
+            }
+            else {
+                $scope.navs[0].active = false;
+            }
+        }
     };
 
     $scope.$watch(function () {

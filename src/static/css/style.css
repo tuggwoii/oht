@@ -23,6 +23,7 @@ body {
     font-family: 'gotham-light', sans-serif;
     font-size: 18px;
     color: #333;
+    min-width: 960px;
     overflow-x:hidden;
 }
 
@@ -40,18 +41,19 @@ small {
 
 .navbar {
     border-radius: 0;
-    height: 70px;
     margin-bottom: 0;
+    background-color: rgba(240,240,240,0.9);
+    box-shadow: 1px 1px 10px #999;
 }
 
-.navbar .languages {
+.navbar .languages, .navbar .currency  {
     float:right;
     font-size:14px;
 }
-.navbar .languages .selected {
+.navbar .languages .selected, .navbar .currency .selected {
         padding: 23px;
 }
-.navbar .languages .selected label {
+.navbar .languages .selected label, .navbar .currency .selected label {
     top:1px;
     left: 5px;
     position:relative;
@@ -359,18 +361,97 @@ ul, li {
 .container-fluid .search {
     position:absolute;
     width:400px;
-    height:400px;
-    top:20%;
+    height: 465px;
+    top: 16%;
     background-color:rgba(255,255,255,0.9);
     left: 30px;
     border-radius: 5px;
+    padding: 10px 20px;
+    height: 465px;
 }
 label {
     font-weight:normal;
 }
 .split {
-    background-color: #F6F6F6;
-    height: 10px;
+    background-color: cadetblue;
+    height: 50px;
+    padding: 16px 15px;
+}
+.search h3 {
+    color: #999;
+    border-bottom:1px solid #ccc;
+    padding: 10px 0px;
+    margin-bottom:15px;
+}
+.search label {
+    display:block;
+}
+.search input {
+    height: 34px;
+    font-family: 'gotham-light', sans-serif;
+}
+.search select {
+    height: 34px;
+    border-radius: 2px;
+    font-family: 'gotham-light', sans-serif;
+}
+.search .btn {
+    padding: 3px 15px;
+    height:40px;
+    width: 100%;
+    margin-top: 5px;
+}
+header .contact, header .languages, header .currency {
+    float:right;
+}
+header .contact {
+    padding:0 20px;
+}
+header .contact h4 {
+    font-size:14px;
+    border-bottom:1px solid #ccc;
+    padding-bottom: 5px;
+    margin: 5px 0;
+}
+header .contact span {
+    font-size:12px;
+    display:block;
+}
+footer {
+    height: 100px;
+    background-color: cadetblue;
+}
+footer .contact {
+    padding: 5px 20px;
+    float:left;
+    color:#fff;
+}
+footer .contact h4 {
+    font-size:16px;
+    border-bottom:1px solid #ccc;
+    padding-bottom: 5px;
+    margin: 10px 0;
+}
+footer .contact span {
+    font-size:14px;
+    display:block;
+}
+.zone h2 {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+.copyright {
+    color:#fff;
+    float:right;
+    padding: 40px 15px;
+    font-size:14px;
+}
+.social-container {
+    float:right;
+}
+.main img {
+    width: 100%;
+    min-width:1900px;
 }
 @media screen and (max-width: 992px) {
     .steps .col-md-4 {

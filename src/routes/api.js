@@ -5,7 +5,8 @@ var roleApi = require('../api/role');
 var accountApi = require('../api/account');
 var pageApi = require('../api/page');
 var languageApi = require('../api/language');
-var routes = [staticApi, roleApi, accountApi, pageApi, languageApi];
+var hotelApi = require('../api/hotel');
+var routes = [staticApi, roleApi, accountApi, pageApi, languageApi, hotelApi];
 
 module.exports = function (request, response) {
     var isFound = false;

@@ -4,9 +4,10 @@ var Language = require('../database/models').Language;
 
 class LanguageApi extends BaseApi {
 
-    createModel(data) {
+    createModel (data) {
         return {
-            name: data.name
+            name: data.name,
+            app_id: data.app_id
         };
     }
 
@@ -68,9 +69,9 @@ class LanguageApi extends BaseApi {
 
     endpoints() {
         return [
-            { url: '/languages', method: 'get', roles: [], response: this.getAll },
-			{ url: '/languages', method: 'post', roles: ['admin', 'user'], response: this.add },
-            { url: '/languages', method: 'delete', roles: ['admin', 'user'], response: this.delete, params: ['id'] }
+            { url: '/types', method: 'get', roles: [], response: this.getAll },
+			{ url: '/types', method: 'post', roles: ['admin', 'user'], response: this.add },
+            { url: '/types', method: 'delete', roles: ['admin', 'user'], response: this.delete, params: ['id'] }
         ];
     }
 }

@@ -1,13 +1,15 @@
 ﻿'use strict';
 var BaseApi = require('./base');
-var Language = require('../database/models').Language;
+var shortid = require('shortid');
+var Hotel = require('../database/models').Hotel;
+shortid.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
 
-class LanguageApi extends BaseApi {
+class HotelApi extends BaseApi {
 
-    createModel(data) {
-        return {
-            name: data.name
-        };
+    createModel (data) {
+        var model = data;
+        model.sid = shortid.generate();
+        return model;
     }
 
     serializerModel (data) {
@@ -36,8 +38,16 @@ class LanguageApi extends BaseApi {
         return promise;
     }
 
+    get (context, req, res) {
+        Hotel.findById(req.params.id).then(function (data) {
+            context.success(req, res, data);
+        }).catch(function (err) {
+            context.error(req, res, err, 500);
+        });
+    }
+
     getAll (context, req, res) {
-        Language.all().then(function (data) {
+        Hotel.all().then(function (data) {
             context.success(req, res, data);
         }).catch(function (err) {
             context.error(req, res, err, 500);
@@ -47,19 +57,18 @@ class LanguageApi extends BaseApi {
     add (context, req, res) {
         context.isValid(req.body).then(function () {
             var model = context.createModel(req.body);
-            Language.create(model, { isNewRecord: true }).then(function (_model) {
+            Hotel.create(model, { isNewRecord: true }).then(function (_model) {
                 context.success(req, res, _model)
             }).catch(function (err) {
                 context.error(req, res, err, 500);
             });
-
         }).catch(function (err) {
             context.error(req, res, err, 400);
         });
     }
 
     delete (context, req, res) {
-        Language.destroy({ where: { id: req.params.id } }).then(function () {
+        Hotel.destroy({ where: { id: req.params.id } }).then(function () {
             context.success(req, res, {});
         }).catch(function (err) {
             context.error(req, res, err, 500);
@@ -68,11 +77,12 @@ class LanguageApi extends BaseApi {
 
     endpoints() {
         return [
-            { url: '/languages', method: 'get', roles: [], response: this.getAll },
-			{ url: '/languages', method: 'post', roles: ['admin', 'user'], response: this.add },
-            { url: '/languages', method: 'delete', roles: ['admin', 'user'], response: this.delete, params: ['id'] }
+            { url: '/hotels', method: 'get', roles: [], response: this.getAll },
+            { url: '/hotels', method: 'get', roles: [], response: this.get, params: ['id'] },
+			{ url: '/hotels', method: 'post', roles: ['admin', 'user'], response: this.add },
+            { url: '/hotels', method: 'delete', roles: ['admin', 'user'], response: this.delete, params: ['id'] }
         ];
     }
 }
 
-module.exports = new LanguageApi();
+module.exports = new HotelApi();
