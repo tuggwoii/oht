@@ -8,12 +8,10 @@
     <link href="/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/css/fas/css/font-awesome.min.css" rel="stylesheet" />
     <link href="/css/animate.css" rel="stylesheet" />
-    <link href="/css/style.css" rel="stylesheet" type="text/css" />
-    <link href="/css/dashboard.css" rel="stylesheet" />
-    <link href="/css/popup.css" rel="stylesheet" />
+    <link href="/css/backends.css" rel="stylesheet" type="text/css" />
     <link href="/js/modules/notifications/styles/notification.css" rel="stylesheet" />
 </head>
-<body ng-controller="DashboardController" class="dashboard"  ng-cloak>
+<body ng-controller="DashboardController" class="be dashboard"  ng-cloak>
     <div class="container-fluid has-sidebar {{state.isReady}}" ng-show="state.isReady">
         <nav class="side-nav" ng-controller="NavController" ng-include="'js/modules/dashboard/views/nav.html'"></nav>
         <div class="view" ui-view></div>
@@ -33,6 +31,7 @@
     <script src="/libs/angular-animate/angular-animate.min.js"></script>
     <script src="/libs/angular-cookies/angular-cookies.min.js"></script>
     <script src="/js/app.js"></script>
+    <script src="/js/areas.js"></script>
     <script src="/js/ui-router.js"></script>
     <script src="/js/routes.js"></script>
     <script src="/js/modules/apis/services/urls.js"></script>

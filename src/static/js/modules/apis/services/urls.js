@@ -12,7 +12,8 @@ module.factory('URLS', function () {
             me: base + 'accounts/me',
             logout: base + 'accounts/logout'
         },
-        strings: '/resources/strings.json'
+        strings: '/resources/strings.json',
+        areas: '/resources/areas.json'
     };
 
     function modelEndpoints (model) {

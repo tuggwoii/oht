@@ -93,6 +93,14 @@ var Hotel = sequelize.define('hotels', {
     map: {
         type: Sequelize.STRING(4000),
         field: 'map'
+    },
+    area: {
+        type: Sequelize.STRING,
+        field: 'area'
+    },
+    province: {
+        type: Sequelize.STRING,
+        field: 'province'
     }
 });
 

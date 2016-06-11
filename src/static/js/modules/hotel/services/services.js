@@ -11,8 +11,14 @@ module.factory('HotelService', ['$http', '$q', 'URLS', function ($http, $q, URLS
         create: function (data) {
             return $http.post(URLS.model('hotels').all, data);
         },
+        save: function (data) {
+            return $http.patch(URLS.model('hotels').all, data);
+        },
         delete: function (id) {
             return $http.delete(URLS.model('hotels').one.replace('{id}', id));
+        },
+        areas: function () {
+            return $http.get(URLS.model('areas'));
         }
     };
 }]);

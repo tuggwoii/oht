@@ -1,0 +1,38 @@
+﻿@media screen and (max-width: 992px) {
+    .be {
+        .logo-circle img {
+            width: 35px;
+        }
+
+        .logo-circle {
+            border-radius: 34px;
+            padding: 15px;
+        }
+
+        nav .menu {
+            padding: 0 0 0 27px;
+        }
+
+        nav .menu .menu-title {
+            display: none;
+        }
+
+        .side-nav {
+            width: 100px;
+        }
+
+        .container-fluid.has-sidebar {
+            width: 100%;
+            padding-left: 100px;
+        }
+    }
+}
+
+@media screen and (max-height: 800px) {
+    .be {
+        .side-nav {
+            position: absolute;
+            min-height: 800px;
+        }
+    }
+}

@@ -66,22 +66,6 @@ small {
     position: relative;
 }
 
-.side-nav {
-    background: #06283d;
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 250px;
-    padding-top: 50px;
-}
-
-.side-nav a {
-    display: block;
-    color: #fff;
-    padding: 25px 10px;
-    cursor: pointer;
-}
 .navbar-nav>li>a {
     padding:30px;
     font-family: 'gotham-reg', sans-serif;
@@ -102,20 +86,6 @@ nav a:hover, nav a:active, nav a:focus {
     display: inline-block;
     font-size: 14px;
     text-align: left;
-}
-
-.container-fluid.has-sidebar {
-    width: 100%;
-    padding-left: 250px;
-}
-
-.sidebar {
-    background: rgb(54,56,78);
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 25%;
 }
 
 input.form-control {
@@ -332,17 +302,6 @@ h1 .btn {
 h1 .btn i {
     margin-right:10px;
 }
-.panel  {
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    min-height:100%;
-    padding: 50px;
-    animation-duration:0.3s;
-    -webkit-animation-duration:0.3s;
-    -moz-animation-duration:0.3s;
-}
 .form {
     margin-top:20px;
 }
@@ -456,13 +415,6 @@ footer .contact span {
 @media screen and (max-width: 992px) {
     .steps .col-md-4 {
         height: 150px;
-    }
-    .container-fluid.has-sidebar {
-        width: 100%;
-        padding-left: 100px;
-    }
-    .side-nav {
-        width: 100px;
     }
 }
 @media screen and (max-width: 768px) {

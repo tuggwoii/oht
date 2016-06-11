@@ -1,8 +1,16 @@
 'use strict';
 
 module.exports = {
-  up: function (queryInterface, Sequelize) {
-  
+    up: function (queryInterface, Sequelize) {
+        queryInterface.addColumn(
+             'hotels','area',
+        {
+            type: Sequelize.STRING
+        }).then(function () {
+               console.log('success');
+        }).catch(function (err) {
+               console.log(err);
+        });
   },
   down: function (queryInterface, Sequelize) {
     /*

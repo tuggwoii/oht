@@ -9,10 +9,10 @@
   "author": "TuGG",
   "license": "ISC",
   "dependencies": {
-    "angular": "^1.5.5",
-    "angular-animate": "^1.5.5",
-    "angular-cookies": "^1.5.5",
-    "bcrypt-nodejs": "0.0.3",
+    "angular": "^1.5.6",
+    "angular-animate": "^1.5.6",
+    "angular-cookies": "^1.5.6",
+    "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.14.2",
     "bootstrap": "^3.3.6",
     "cookie-parser": "^1.4.0",
@@ -27,7 +27,9 @@
     "grunt": "^0.4.5",
     "grunt-eslint": "^17.3.1",
     "grunt-execute": "^0.2.2",
-    "grunt-open": "^0.2.3"
+    "grunt-open": "^0.2.3",
+    "grunt-contrib-sass": "~1.0.0",
+    "grunt-contrib-watch": "~1.0.0"
   },
   "repository": {
     "url": "https://github.com/tuggwoii/oht.git",
